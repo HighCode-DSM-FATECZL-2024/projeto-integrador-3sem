@@ -1,6 +1,7 @@
 from passlib.hash import bcrypt
 
-class Encryption:
+
+class Passwords:
     @staticmethod
     def encrypt_password(password: str) -> str:
         """
@@ -12,7 +13,16 @@ class Encryption:
             raise ValueError(f"Error generating password hash: {str(err)}")
 
     @staticmethod
-    def verify_password(password: str, hashed: str) -> bool:
+    def verify_passwords_match(passw_one: str, pass_two: str) -> bool:
+        """
+        Check if passwords are the same
+        """
+        if passw_one == pass_two:
+            return True
+        return False
+
+    @staticmethod
+    def verify_password_with_hash(password: str, hashed: str) -> bool:
         """
         Verifies if the provided password matches the stored hash.
 
