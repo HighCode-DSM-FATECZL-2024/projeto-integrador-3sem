@@ -1,4 +1,4 @@
-from typing import Optional, Tuple
+from typing import Optional, Tuple, Any
 
 from app.core.decorators.db_management import session_management
 from .models import Users
@@ -16,13 +16,25 @@ class AuthService:
 
     @staticmethod
     @session_management
-    def search_email(session, email: str) -> Tuple[bool, Optional[Users]]:
+    def search_email(session, email: str) -> tuple[bool, None] | tuple[bool, dict[str, Any | None]]:
         """Search for a user by email."""
         if not email:
             return False, None
+
         user = session.query(Users).filter(Users.email == email).first()
+
         if user:
-            return True, user
+            user_dict = {
+                'id': user.id,
+                'first_name': user.first_name,
+                'last_name': user.last_name,
+                'email': user.email,
+                'telephone': user.telephone,
+                'password': user.password,
+                'created_at': user.created_at.isoformat() if user.created_at else None
+            }
+            return True, user_dict
+
         return False, None
 
     @staticmethod
@@ -35,3 +47,5 @@ class AuthService:
         if phone:
             return True, phone
         return False, None
+
+class OTPService: pass

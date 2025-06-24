@@ -1,4 +1,4 @@
-from starlette.status import HTTP_409_CONFLICT
+from starlette.status import HTTP_409_CONFLICT, HTTP_404_NOT_FOUND, HTTP_401_UNAUTHORIZED
 
 class AppException(Exception):
     def __init__(self, message="Application error", status_code=500):
@@ -18,4 +18,12 @@ class PasswordsDoNotMatchException(AppException):
 
 class DataAlreadyExistsException(AppException):
     def __init__(self, message="This data already exists in the database.", status_code=HTTP_409_CONFLICT):
+        super().__init__(message, status_code)
+
+class NonExistentEmailException(AppException):
+    def __init__(self, message="E-mail does not exist in the database.", status_code=HTTP_404_NOT_FOUND):
+        super().__init__(message, status_code)
+
+class InvalidCredentialsException(AppException):
+    def __init__(self, message="Invalid user credentials.", status_code=HTTP_401_UNAUTHORIZED):
         super().__init__(message, status_code)

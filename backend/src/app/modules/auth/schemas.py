@@ -1,5 +1,6 @@
 from pydantic import BaseModel, EmailStr, Field
 from datetime import datetime
+from typing import Literal
 from zoneinfo import ZoneInfo
 
 class UserCreateValidator(BaseModel):
@@ -11,4 +12,12 @@ class UserCreateValidator(BaseModel):
     password: str
     confirm_password: str
 
-class UserLoginValidator(BaseModel): pass
+class UserLoginValidator(BaseModel):
+    email: EmailStr
+    password: str
+
+class OTPCodeValidator(BaseModel):
+    otp_code: int
+
+class OTPTypeValidator(BaseModel):
+    otp_type: Literal["email", "sms"]
