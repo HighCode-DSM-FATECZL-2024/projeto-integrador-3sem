@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, DateTime
 
 from app.configs.db_base import Base
 
@@ -11,3 +11,4 @@ class Users(Base):
     email = Column(String, nullable=False, unique=True)
     telephone = Column(Integer, nullable=False, unique=True)
     password = Column(String, nullable=False)
+    created_at = Column(DateTime, nullable=False)

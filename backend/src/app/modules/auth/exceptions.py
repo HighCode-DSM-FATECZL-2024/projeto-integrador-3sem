@@ -15,3 +15,7 @@ class AppException(Exception):
 class PasswordsDoNotMatchException(AppException):
     def __init__(self, message="Passwords do not match.", status_code=HTTP_409_CONFLICT):
         super().__init__(message, status_code)
+
+class DataAlreadyExistsException(AppException):
+    def __init__(self, message="This data already exists in the database.", status_code=HTTP_409_CONFLICT):
+        super().__init__(message, status_code)
