@@ -37,9 +37,35 @@
         >Converse com a IA</span
       >
     </RouterLink>
+    <RouterLink
+      to="/login"
+      active-class="-translate-x-[2px]"
+      class="w-full group h-24 px-4 py-8 flex gap-8 hover:-translate-x-[2px] hover:text-blue-600 dark:hover:text-blue-400 justify-around transition-transform duration-300"
+    >
+      <div class="w-1/4 flex justify-center">
+        <User class="w-8 h-auto" />
+      </div>
+      <span
+        class="border-b border-gray-600 w-3/4 text-md font-semibold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400"
+        >Login</span
+      >
+    </RouterLink>
+    <RouterLink
+      to="/register"
+      active-class="-translate-x-[2px]"
+      class="w-full group h-24 px-4 py-8 flex gap-8 hover:-translate-x-[2px] hover:text-blue-600 dark:hover:text-blue-400 justify-around transition-transform duration-300"
+    >
+      <div class="w-1/4 flex justify-center">
+        <UserPlus class="w-8 h-auto" />
+      </div>
+      <span
+        class="border-b border-gray-600 w-3/4 text-md font-semibold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400"
+        >Registrar-se</span
+      >
+    </RouterLink>
     <div
       @click="switchTheme"
-      class="w-full h-12 gap-6 dark:bg-indigo-400 text-md font-semibold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 flex items-center cursor-pointer justify-center p-2 bg-blue-500 rounded-lg border-2 hover:shadow-xl hover:-translate-y-[2px] transition-shadow transition-transform duration-300 border-blue-700"
+      class="w-full h-12 gap-6 dark:bg-indigo-400 text-md font-semibold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 flex items-center cursor-pointer justify-center p-2 bg-blue-500 border-y-2 hover:shadow-xl hover:-translate-y-[2px] transition-shadow transition-transform duration-300 border-blue-700"
     >
       <component
         :class="[darkTheme ? 'text-white' : 'text-black']"
@@ -58,7 +84,7 @@
 
 <script lang="ts" setup>
 import { useThemeStore } from '@/stores/theme'
-import { Home, Menu, X, BotMessageSquare, Sun, Moon } from 'lucide-vue-next'
+import { Home, Menu, X, BotMessageSquare, Sun, Moon, User, UserPlus } from 'lucide-vue-next'
 import { storeToRefs } from 'pinia'
 import { ref, watchEffect } from 'vue'
 const { switchTheme } = useThemeStore()
