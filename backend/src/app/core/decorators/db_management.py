@@ -1,5 +1,5 @@
 from functools import wraps
-from app.configs.db_session import session
+from app.configs.database import session
 
 """
     This decorator is responsible for managing the database session, committing and closing.
@@ -7,7 +7,7 @@ from app.configs.db_session import session
 def session_management(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
-        db_session = session()
+        db_session = session
         try:
             result = func(db_session, *args, **kwargs)
             db_session.commit()

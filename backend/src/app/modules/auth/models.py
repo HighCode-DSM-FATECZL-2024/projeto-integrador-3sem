@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.orm.exc import DetachedInstanceError
 
-from app.configs.db_base import Base
+from app.configs.database.base import Base
 
 class Users(Base):
     __tablename__ = "Users"

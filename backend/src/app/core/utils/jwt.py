@@ -1,6 +1,6 @@
 import jwt, datetime
 
-from app.configs.configurations import configs
+from app.configs.application.configurations import configs
 
 class JWT:
     @staticmethod
