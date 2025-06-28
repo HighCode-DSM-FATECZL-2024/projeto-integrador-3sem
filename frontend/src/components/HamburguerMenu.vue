@@ -9,7 +9,7 @@
   </div>
   <div
     v-show="menuOpen"
-    class="fixed z-20 top-0 right-0 h-full w-80 pt-16 bg-blue-400 dark:bg-indigo-500 lg:hidden"
+    class="fixed z-20 top-0 right-0 h-full w-48 md:w-80 pt-16 bg-blue-400 dark:bg-indigo-500 lg:hidden"
   >
     <RouterLink
       to="/"
@@ -20,7 +20,7 @@
         <Home class="w-8 h-auto" />
       </div>
       <span
-        class="border-b border-gray-600 w-3/4 text-md font-semibold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400"
+        class="border-b border-gray-600 w-3/4 text-xs md:text-md font-semibold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400"
         >Pagina inicial</span
       >
     </RouterLink>
@@ -33,7 +33,7 @@
         <BotMessageSquare class="w-8 h-auto" />
       </div>
       <span
-        class="border-b border-gray-600 w-3/4 text-md font-semibold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400"
+        class="border-b border-gray-600 w-3/4 text-xs md:text-md  font-semibold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400"
         >Converse com a IA</span
       >
     </RouterLink>
@@ -46,7 +46,7 @@
         <User class="w-8 h-auto" />
       </div>
       <span
-        class="border-b border-gray-600 w-3/4 text-md font-semibold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400"
+        class="border-b border-gray-600 w-3/4 text-xs md:text-md  font-semibold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400"
         >Login</span
       >
     </RouterLink>
@@ -59,7 +59,7 @@
         <UserPlus class="w-8 h-auto" />
       </div>
       <span
-        class="border-b border-gray-600 w-3/4 text-md font-semibold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400"
+        class="border-b border-gray-600 w-3/4 text-xs md:text-md  font-semibold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400"
         >Registrar-se</span
       >
     </RouterLink>
