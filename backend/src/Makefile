@@ -12,13 +12,14 @@ venv:
 	@echo " Checking for virtual environment..."
 	@if [ ! -d .venv ]; then \
 		echo " Creating virtual environment..."; \
-		$(PYTHON) -m venv .venv; \
+		$(PYTHON) -m venv .venv > /dev/null; \
 	fi
 	@echo " Installing dependencies..."
-	@.venv/bin/pip install --upgrade pip
-	@.venv/bin/pip install -r requirements.txt
+	@.venv/bin/pip install --upgrade pip > /dev/null
+	@.venv/bin/pip install -r requirements.txt > /dev/null
 	@echo " Virtual environment ready!"
 
 run:
-	@echo " > Running FastAPI application..."
-	@PYTHONPATH=. .venv/bin/uvicorn app.app:app --reload
+	@echo "\n\n > Running FastAPI application..."
+	@echo " Running in http://localhost:8000"
+	@PYTHONPATH=. .venv/bin/uvicorn app.app:app --reload --log-level error --no-access-log
